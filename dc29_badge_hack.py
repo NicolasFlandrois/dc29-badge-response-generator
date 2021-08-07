@@ -56,6 +56,9 @@ def dc29_badge(count: int, prefix: str, isSignalBadge: bool, starttoken: str):
     else:
         typeofresp = "01"
 
+    if len(starttoken) == 31:
+        starttoken = f'0{starttoken}'
+
     for _ in range(count):
         print(f'{token_hex(1)}{starttoken[2:4]}{token_hex(2)}\
 {starttoken[8:10]}{prefix}{token_hex(2)}{starttoken[16:20]}13000100\
@@ -63,9 +66,9 @@ def dc29_badge(count: int, prefix: str, isSignalBadge: bool, starttoken: str):
 
 
 if __name__ == '__main__':
-    # starttoken = input("Input one of your request tokens:\t")
-
-    starttoken = '4DF10F76EF35775B0087121A20090748'
+    starttoken = input("Input one of your request tokens:\t")
+    if len(starttoken) == 31:
+        print('Seems you inherited a 31 token. Correcting...')
 
     print(f"""Your req token is {starttoken}.
     \nCopy-paste the following strings as the resp token.

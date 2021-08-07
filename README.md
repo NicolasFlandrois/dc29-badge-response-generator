@@ -1,17 +1,22 @@
 # Defcon 29 Badge Code Generator
 
 Date: Sat 07 August 2021
+
 Licence: MIT (2021)
 
-This script is based on the work of igloo22225.
-https://github.com/igloo22225/dc29-badge-response-generator
-Have a look to his analysis, and how he decrypted the token, in his github repository.
+---
+This script is based on the work of [**igloo22225**](https://github.com/igloo22225/dc29-badge-response-generator).
+Have a look to his analysis, and how he decrypted the token, on [his github repository](https://github.com/igloo22225/dc29-badge-response-generator).
 
-Exactly as the title says. Will generate 7 signal keys to get you to signal then will generate 20 keys to distribute the signal.  
-Format out by igloo22225, Kiyomi Fujisaki, and an anonymous defcon helper :)  
-Credit to Simonomi for figuring out the actual ID format and for providing a working solution to the 31 bit issue (https://github.com/d1str0/dc29-badge/issues/1#issuecomment-894018025)  
-  
-**Usage Intructions**  
-1) Download and install golang. Likely called "go" or "golang" in the package manager of your choice. If you are on Windows, there are tons of guides online.  
-2) Download main.go from the repository and place it somewhere you can find it.  
-3) Run "go run *path to main.go*" from your command line. You will be asked for a sample request; from this, the responce codes will be given.  
+This python version wouldn't exists without his help.
+
+---
+This is a short python equivalent to *igloo22225*'s GO version. It will simply and automatically generate a succession of 'resp' token matching your DC29 badge 'req' token.
+I increased entropy by using random hexadecimal numbers in Tier Badge informations. Some areas in the token (Prefix, IsSignalBadge), are constants to identify the badge's status.
+(*So far it works!*)
+
+To install and use it:
+
+- Python 3.6 and Higher.
+- Library used are built in.
+- Launch the script and follow instructions.
